@@ -28,6 +28,8 @@ console.log(Image.all);
 Image.prototype.renderImages = function() {
   let imageTemplate =  $('#photo-template').clone();
   imageTemplate.find('h2').text(this.title);
+  imageTemplate.find('img').attr('src', this.image_url);
+  imageTemplate.find('p').text(this.description);
   imageTemplate.appendTo('main');
 };
 
