@@ -33,12 +33,4 @@ Image.prototype.renderImages = function() {
   imageTemplate.appendTo('main');
 };
 
-// function renderImages() {  
-//    let imageTemplate =  $('#photo-template').clone();
-//    imageTemplate.find('img').attr('src', "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg");
-//    imageTemplate.find('h2').text('hello world');
-//    imageTemplate.find('p').text('hello world');
-//    imageTemplate.appendTo('body');
-// }
-
 
