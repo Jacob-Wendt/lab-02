@@ -7,9 +7,8 @@ $.get( './data/page-1.json', function( data ) {
 }).done(function(){
   Image.all.forEach(function(imagesOnPage){
     imagesOnPage.renderImages();
-   
   });
-  filerByKeyword();
+  filterByKeyword();
 });
 
 //renderImages
@@ -32,21 +31,30 @@ Image.prototype.renderImages = function() {
   imageTemplate.find('h2').text(this.title);
   imageTemplate.find('img').attr('src', this.image_url);
   imageTemplate.find('p').text(this.description);
+  imageTemplate.find('img').attr('alt', this.keyword);
   imageTemplate.appendTo('main');
 
 };
 
-function filerByKeyword() {
+function filterByKeyword() {
   let keywordsArray = [];
   for (let i = 0; i < Image.all.length; i++) {
     let newKeyword = Image.all[i].keyword;
     keywordsArray.indexOf(newKeyword) === -1 ? keywordsArray.push(newKeyword) : console.log('there is a duplicate');
   }
-//   keywordsArray.forEach(function(keyword) {
-//     let new $('option')
-//   })
-  console.log("new" + keywordsArray.length);
+  keywordsArray.forEach(function(element) {
+    $('select').append(`<option value=${element}>${element}</option>`);
+  });
 }
+
+$('select').change(function(){
+  let value = $(this).val();
+  console.log(value);
+  $('img').parent().hide();
+  $(`img[alt="${value}"]`).parent().show();
+});
+
+
 
 
 
