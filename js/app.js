@@ -1,14 +1,12 @@
 'use strict';
 
 $.get( './data/page-1.json', function( data ) {
-  // console.log(data[0].title);
-  // console.log(data[0].image_url);
   data.forEach(function(image) {
-    new Image(image); 
+    new Image(image);
   });
 });
 
-
+//renderImages
 Image.all = [];
 
 function Image (image_obj) {
@@ -22,9 +20,12 @@ function Image (image_obj) {
 }
 console.log(Image.all);
 
-function renderImages() {
+function renderImages() {  
    let imageTemplate =  $('#photo-template').clone();
+   imageTemplate.find('img').attr('src', "http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg");
    imageTemplate.find('h2').text('hello world');
+   imageTemplate.find('p').text('hello world');
+   imageTemplate.appendTo('body');
 }
 
 renderImages();
