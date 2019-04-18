@@ -1,7 +1,7 @@
 'use strict';
 
-var source   = document.getElementById("entry-template").innerHTML;
-var template = Handlebars.compile(source);
+// var source   = document.getElementById("entry-template").innerHTML;
+// var template = Handlebars.compile(source);
 
 $.get( './data/page-1.json', function( data ) {
   data.forEach(function(image) {
@@ -13,6 +13,7 @@ $.get( './data/page-1.json', function( data ) {
   });
   filterByKeyword();
   sortby(); 
+  changePage();
 });
 
 //renderImages
@@ -36,9 +37,12 @@ Image.prototype.renderImages = function() {
   imageTemplate.find('img').attr('src', this.image_url);
   imageTemplate.find('p').text(this.description);
   imageTemplate.find('img').attr('alt', this.keyword);
-  imageTemplate.appendTo('main');
-
+  //imageTemplate.appendTo('main');
+  return imageTemplate;
 };
+
+
+
 
 function filterByKeyword() {
   let keywordsArray = [];

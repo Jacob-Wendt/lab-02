@@ -1,0 +1,12 @@
+a.button {
+    width: 100px; 
+    background-color: aqua;
+    color: #fff;
+    height: 50px; 
+    text-decoration: none; 
+    padding: 19px;
+    margin: 15px; 
+}
+.page-number {
+    clear: both; 
+}
