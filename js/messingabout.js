@@ -9,17 +9,17 @@ let numberPerPage = 6;  //this will be how many images we have up at a time max
 let numberOfPages = 1;  //this will be how many pages i have (hopefully generate it on load somehow?)
 
 funtion makeList(){                   
-  for (i=0; i < image.all.length; i++){             //this fucker makes the array i will use to paginate
+  for (i=0; i < image.all.length; i++){             //this makes the array i will use to paginate
     list.push(image.all[i]);
   };
     numberOfPages = numberofPages();
 };
 
 function numberofPages() {
-  return math.Ceil(list.length / numberPerPage);                    // this bastard tells me how many pages i have
+  return math.Ceil(list.length / numberPerPage);                    // this tells me how many pages i have
 };
 
-/*make buttonesk bitches in the html to hold each funtion
+/*make buttones in the html to hold each funtion
 first button
 first()
 
@@ -65,7 +65,7 @@ function drawList() {
 
 };
 
-function load() {                  //this bitch runs it all
+function load() {                  //this will run it all
     makelist();
     loadList();
 };
