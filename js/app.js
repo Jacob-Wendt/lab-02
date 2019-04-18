@@ -1,5 +1,8 @@
 'use strict';
 
+var source   = document.getElementById("entry-template").innerHTML;
+var template = Handlebars.compile(source);
+
 $.get( './data/page-1.json', function( data ) {
   data.forEach(function(image) {
     new Image(image);
@@ -9,6 +12,7 @@ $.get( './data/page-1.json', function( data ) {
     imagesOnPage.renderImages();
   });
   filterByKeyword();
+  sortby(); 
 });
 
 //renderImages
@@ -53,6 +57,16 @@ $('select').change(function(){
   $('img').parent().hide();
   $(`img[alt="${value}"]`).parent().show();
 });
+
+function sortby() {
+  let namesArray = [];
+  let hornsArray = [];
+  for (let i = 0; i < Image.all.length; i++) {
+    namesArray.push(Image.all[i].title);
+    hornsArray.push(Image.all[i].horns);
+  }
+}
+
 
 
 
