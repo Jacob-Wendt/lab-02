@@ -73,9 +73,3 @@ function sortby() {
     hornsArray.push(Image.all[i].horns);
   }
 }
-
-
-
-
-
-
