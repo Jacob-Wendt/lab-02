@@ -13,10 +13,9 @@ $.get( './data/page-1.json', function( data ) {
   });
   filterByKeyword();
   sortby(); 
-  changePage();
+  changePage(1);
 });
 
-//renderImages
 Image.all = [];
 
 function Image (image_obj) {
@@ -41,9 +40,6 @@ Image.prototype.renderImages = function() {
   return imageTemplate;
 };
 
-
-
-
 function filterByKeyword() {
   let keywordsArray = [];
   for (let i = 0; i < Image.all.length; i++) {
@@ -61,7 +57,7 @@ $('select').change(function(){
   $('img').parent().hide();
   $(`img[alt="${value}"]`).parent().show();
   if (value === 'all') {
-  $('img').parent().show();
+    $('img').parent().show();
   }
 });
 
