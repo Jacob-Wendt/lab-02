@@ -50,12 +50,15 @@ function filterByKeyword() {
     $('select').append(`<option value=${element}>${element}</option>`);
   });
 }
-
+$('select').append('<option value="all">All Images</option>');
 $('select').change(function(){
   let value = $(this).val();
   console.log(value);
   $('img').parent().hide();
   $(`img[alt="${value}"]`).parent().show();
+  if (value === 'all') {
+  $('img').parent().show();
+  }
 });
 
 function sortby() {
