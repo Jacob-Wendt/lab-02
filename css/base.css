@@ -1,16 +1,3 @@
 body{
     text-align: center; 
 }
-#photo-template {
-    width: 30%; 
-    float: left; 
-    padding: 15px; 
-    box-sizing: border-box;
-    height: 400px; 
-
-}
-img {
-    max-width: 100%; 
-    height: 200px; 
-   
-}
